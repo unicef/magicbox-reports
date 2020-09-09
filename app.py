@@ -14,6 +14,9 @@ reports_dir = 'reports'
 # Instantiate the app 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
+# Expose server
+server = app.server
+
 # load the header
 
 os.walk(reports_dir)
