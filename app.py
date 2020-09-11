@@ -6,16 +6,15 @@
 import dash
 import importlib
 import os
+
 from config import config
 from lib.UnicefDash import UnicefDash 
 
-external_stylesheets = ['https://cdn.jsdelivr.net/npm/@unicef/design-system/dist/css/unicef.css',
-'https://cdn.jsdelivr.net/npm/@unicef/design-system/dist/css/doc.css'
-]
+
 
 # Instantiate the app 
 app = UnicefDash(__name__, 
-  external_stylesheets=external_stylesheets,
+  external_stylesheets=config['external_stylesheets'],
   update_title='Loading...')
 
 # Expose server 
