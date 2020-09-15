@@ -24,7 +24,7 @@ class UnicefDash(dash.Dash):
     <a class="navbar-brand mr-0" href="./">Magicbox reports</a>
     <ul class="navbar-nav rounded-left ml-auto p-2 flex-row d-none d-md-flex p-0">
 				<li class="nav-item ml-3">
-            <a class="nav-link ml-auto" href="https://github.com/unicef/design-system/"><i class="fab fa-github"></i> Github</a>
+            <a class="nav-link ml-auto" href="https://github.com/unicef/magicbox-reports/"><i class="fab fa-github"></i> Github</a>
 				</li>
 			</ul>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
