@@ -1,2 +1,0 @@
-def header(app): 
-  return
