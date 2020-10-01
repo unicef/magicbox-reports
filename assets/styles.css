@@ -11,3 +11,9 @@ a.report-item {
 a.report-item:hover {
   background-color: #F4F4F4
 }
+
+._dash_loading {
+  height: 50vh;
+  width: 100%;
+
+}

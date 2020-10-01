@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Embed with an iframe</title>
+  </head>
+  <body> 
+  <h1>How to embed a Magicbox report in an existing page</h1>
+  <ol>
+    <li>
+      <p>Add the following template code to the page where you want to embed a report:</p>
+      <textarea style="width:600px" rows="6">
+      <iframe frameborder="0" id="report"></iframe>  
+        <script src="http://{server-url}/assets/embed.js"></script>
+        <script>
+          embed("report", "http://{server-url}/<report-path>/?embedded=true")
+        </script>
+        </textarea>
+    </li>
+   <li>
+     <p>In the copied template replace <code>{server-url}</code> with the server where magicbox-reports is hosted.</p>
+    </li>
+    <li>
+      <p>In the copied template replace <code>{report-path}</code> with the path of the report to embed.</p>
+  </li>
+</ol>
+
+  <h2>Example:</h2>
+  <textarea style="width:600px" rows="6">
+  <iframe frameborder="0" id="report"></iframe>  
+  <script src="http://magicbox-herokuapp.com/assets/embed.js"></script>
+  <script>
+    embed("report", "http://magicbox-herokuapp.com/reports/report3/?embedded=true")
+  </script>
+  </textarea>
+</div>
+  Output: 
+  <hr>
+    <iframe frameborder="0" id="report"></iframe>  
+    <script src="http://magicbox-herokuapp.com/assets/embed.js"></script>
+    <script>
+      embed("report", "http://magicbox-herokuapp.com/reports/report3/?embedded=true")
+    </script>
+  <hr>
+  </body>
+</html>
