@@ -22,7 +22,7 @@ def header_links_layout(links):
     children= list(map(header_link_item, links))
   )
   
-def tab_link_item(link):
+def tab_link_item(link, active_pathname):
   return html.Li(className="nav-item", children=[
     html.A(
       className="nav-link", 
@@ -33,14 +33,14 @@ def tab_link_item(link):
     )
   ])
 
-def tab_links_layout(links): 
+def tab_links_layout(links, active_pathname): 
   return html.Div(
     className="collapse navbar-collapse d-md-block bg-white",
     id="navbarSupportedContent",
     children =[ 
       html.Ul( 
-        className="nav nab-tabs p-0 bg-white", 
-        children = list(map(tab_link_item, links))
+        className="nav nav-tabs p-0 bg-white", 
+        children = list(map(lambda link: tab_link_item(link, active_pathname), links))
       )
     ]
   )
@@ -94,7 +94,7 @@ def layout(pathname='/'):
               ])
             ]) # Button
         ]), # Nav
-        tab_links_layout(tab_links)
+        tab_links_layout(tab_links, pathname)
       ]) # Header
 
 #<button class="navbar-toggler" type="button" data-toggle="collapse" 
