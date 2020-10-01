@@ -8,7 +8,7 @@
   <ol>
     <li>
       <p>Add the following template code to the page where you want to embed a report:</p>
-      <textarea style="width:600px" rows="6">
+      <textarea style="width:800px" rows="6">
       <iframe frameborder="0" id="report"></iframe>  
         <script src="http://{server-url}/assets/embed.js"></script>
         <script>
@@ -25,20 +25,20 @@
 </ol>
 
   <h2>Example:</h2>
-  <textarea style="width:600px" rows="6">
+  <textarea style="width:800px" rows="6">
   <iframe frameborder="0" id="report"></iframe>  
-  <script src="http://magicbox-herokuapp.com/assets/embed.js"></script>
+  <script src="http://magicbox-reporrs.herokuapp.com/assets/embed.js"></script>
   <script>
-    embed("report", "http://magicbox-herokuapp.com/reports/report3/?embedded=true")
+    embed("report", "http://magicbox-reports.herokuapp.com/reports/report3/?embedded=true")
   </script>
   </textarea>
 </div>
-  Output: 
+  <p>Output: </p>
   <hr>
     <iframe frameborder="0" id="report"></iframe>  
-    <script src="http://magicbox-herokuapp.com/assets/embed.js"></script>
+    <script src="http://magicbox-reports.herokuapp.com/assets/embed.js"></script>
     <script>
-      embed("report", "http://magicbox-herokuapp.com/reports/report3/?embedded=true")
+      embed("report", "http://magicbox-reports.herokuapp.com/reports/report3/?embedded=true")
     </script>
   <hr>
   </body>
