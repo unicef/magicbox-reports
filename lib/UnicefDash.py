@@ -15,6 +15,7 @@ class UnicefDash(dash.Dash):
                 {css}
             </head>
             <body>
+            <!--
             <header>
   <a class="skip" href="#contents" tabindex="0">Skip Navigation</a>
   <nav class="navbar navbar-expand-md flex-md-row bd-navbar p-0">
@@ -41,13 +42,11 @@ class UnicefDash(dash.Dash):
       </li>
   </ul>
 </div>
-</header>
-          <div class="doc container mt-4">
+</header> -->
                 {app_entry}
                 {config}
                 {scripts}
                 {renderer}
-                </div>
             </body>
         </html>
         '''.format(

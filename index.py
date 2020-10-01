@@ -7,6 +7,8 @@ from dash.dependencies import Input, Output
 
 from app import app
 from app import server
+
+import header
 import lister
 import about
 from config import config
@@ -15,11 +17,26 @@ from config import config
 
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
-    html.Div(id='page-content')
+    html.Div(className="", id='page-header'),
+    html.Div(className="doc container mt-4", id='page-content')
 ])
 
+#
+# if the query string (ie search) has embedded=true, then
+# hide header
+#
+@app.callback(Output('page-header', 'children'),
+              [Input('url', 'search')])
+def display_header(search):
+  print('url: ' + search) 
+  hideHeader = re.search('embedded=true',search) 
+  if hideHeader:
+    return ''
+  return header.layout()
 
-# Router 
+#
+# Router
+#  
 @app.callback(Output('page-content', 'children'),
               [Input('url', 'pathname')])
 def display_page(pathname):
