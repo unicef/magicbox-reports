@@ -9,7 +9,7 @@ import pandas as pd
 import plotly.graph_objs as go
 
 # load data as a dataframe
-df = pd.read_csv('https://raw.githubusercontent.com/unicef/magicbox-reports/master/data/CIV_merged.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/unicef/magicbox-reports/master/data/country_merged.csv')
 
 
 def layout():
