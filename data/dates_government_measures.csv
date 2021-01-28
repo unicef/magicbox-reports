@@ -1,0 +1,47 @@
+iso_a3,country,start_date,start_string,end_date,end_string
+UKR,Ukraine,2020-03-15,lockdown,2020-05-22,"partial
+reopening"
+NGA,Nigeria,2020-03-30,"domestic
+travel
+restrictions",2020-06-02,"partial
+reopening"
+COL,Colombia,2020-03-12,"health
+emergency
+declared",2020-05-05,"partial
+reopening"
+MEX,Mexico,2020-03-14,"public
+health
+measures",2020-05-18,"partial
+reopening"
+IND,India,2020-03-24,lockdown,2020-04-25,"shops
+reopening"
+GBR,United Kingdom,2020-03-24,lockdown,2020-05-10,"go to
+work
+allowed"
+ITA,Italy,2020-03-23,lockdown,2020-05-10,"businesses
+reopening"
+MYS,Malaysia,2020-03-18,lockdown,2020-05-07,"measures
+loosened"
+AUS,Australia,2020-03-29,lockdown,2020-05-22,"partial
+reopening"
+IDN,Indonesia,2020-03-16,"physical
+distancing
+enacted",2020-05-07,"resumption
+domestic
+flights"
+DEU,Germany,2020-03-16,"non-essential
+public
+services
+closed",2020-05-15,"internal
+transport
+resumed"
+SGP,Singapore,2020-04-07,limit public gatherings,2020-06-19,businesses reopening
+MMR,Myanmar,2020-03-13,"suspension of
+public gatherings",,
+MOZ,Mozambique,2020-03-23,"limit public
+gatherings",2020-06-28,"international
+flights
+allowed"
+CIV,Côte d'Ivoire,2020-03-24,"national
+curfew",2020-05-08,"total
+reopening"
