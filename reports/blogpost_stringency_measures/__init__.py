@@ -31,6 +31,7 @@ def layout():
     # add scatter plot
     dcc.Graph(
         id='total_cases_at_max_stringency_day-vs-delay_high_stringency_max_cases',
+        config= {'displaylogo': False},
         figure={
             'data': [
                 go.Scatter(
@@ -53,7 +54,7 @@ def layout():
                 margin={'l': 100, 'b': 50, 't': 50, 'r': 100},
                 legend={'x': 1, 'y': 0.5},
                 hovermode='closest'
-            )
+            ),
         }
     ),
   ])
