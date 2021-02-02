@@ -11,10 +11,17 @@
       source venv/bin/activate # use the virtualenv
       pip install
     ```
-    
-2. Create a new branch
+    If using conda instead of venv:
+    ```bash
+      conda create -n myenv python=3.8
+      conda activate myenv
+      pip install -r requirements.txt
+    ```
+
+2. Create a new branch and switch to it:
     ```bash
       git branch report/my-report
+      git checkout report/my-report
     ```
 
 3. Run the app

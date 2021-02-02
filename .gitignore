@@ -2,3 +2,8 @@ venv
 *.pyc
 .DS_Store
 .env
+reports/blogpost_stringency_measures/.ipynb_checkpoints
+bin/
+lib64
+pyvenv.cfg
+.vscode
