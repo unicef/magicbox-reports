@@ -18,8 +18,32 @@ gdf = gpd.read_file('https://raw.githubusercontent.com/unicef/magicbox-reports/r
 # print(gdf.dtypes)
 
 def layout():
-  layout = html.Div([
-    html.H3('Blogpost'),
+  layout = html.Div(
+    className="doc container",
+    children =[
+    html.H1(className="display-4", children=["When to implement lockdowns?"] ),
+    dcc.Markdown('''
+   
+    The World Health Organization declared COVID-19 a pandemic on 11 March 2020. Since then, COVID has deeply 
+    changed our lives and the world we live in, and it is a situation that our governments and systems 
+    have not seen for generations. While the virus predominantly causes mild symptoms, [a large fraction 
+    of people can develop severe conditions](https://journal.chestnet.org/article/S0012-3692(20)34906-0/fulltext) which require prolonged intensive care.
+    
+    In addition, the long-term effects of COVID are still uncertain but include organ damage and long-term illness,
+     even in young adults and persons with no underlying medical conditions. As such, curbing the transmission of the virus is important 
+    to limit the number of people exposed to the virus and, consequently, to reduce the load on healthcare systems. 
+    The latter is important because a strained healthcare system disrupts the access to vital services for non-COVID 
+    patients in need of intensive care and treatments for [cancer](https://ascopubs.org/doi/full/10.1200/GO.20.00351 ),
+    [tuberculosis](https://www.who.int/news/item/14-10-2020-who-global-tb-progress-at-risk), [malaria](https://www.nature.com/articles/s41591-020-1025-y), and many other 
+    conditions. 
+
+    To contain the virus a large majority of countries in the world implemented national lockdowns, in combination 
+    with a suite of other non-pharmaceutical interventions (interventions other than getting vaccinated and taking 
+    medicine) such as mandatory mask wearing and closing of schools. Here **we study the timeline of national lockdowns 
+    and when individual countries implemented them**. Figure 1 shows that this happened in an almost synchronized manner
+     with countries across multiple continents implementing lockdowns and other strict physical distancing measures at 
+     the same time. What led to the cascade of lockdowns is an open question: **were decisions determined by local 
+     epidemiological context or influenced by what other countries were doing?**  '''),
     dcc.Dropdown(
         id='app-blogpost-dropdown',
         options=[
