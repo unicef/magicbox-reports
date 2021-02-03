@@ -1,6 +1,11 @@
 {
   "python.pythonPath": "/Users/merlos/opt/anaconda3/bin/python",
   "cSpell.words": [
-    "covid"
+    "covid",
+    "dtypes",
+    "histo",
+    "objs",
+    "xaxis",
+    "yaxis"
   ]
 }

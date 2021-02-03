@@ -9,6 +9,10 @@
   line-height: 1.8rem
 }
 
+.doc .dash-graph {
+  padding-bottom: 1.5rem;
+}
+
 a.report-item {
  text-decoration: none;
  padding: 8px;

@@ -44,15 +44,16 @@ def layout():
      with countries across multiple continents implementing lockdowns and other strict physical distancing measures at 
      the same time. What led to the cascade of lockdowns is an open question: **were decisions determined by local 
      epidemiological context or influenced by what other countries were doing?**  '''),
-    dcc.Dropdown(
-        id='app-blogpost-dropdown',
-        options=[
-            {'label': 'Blogpost - {}'.format(i), 'value': i} for i in [
-                'NYC', 'MTL', 'LA'
-            ]
-        ]
+  dcc.Dropdown(
+    id='app-blogpost-dropdown',
+    options=[
+      {'label': 'Blogpost - {}'.format(i), 'value': i} for i in [
+        'NYC', 'MTL', 'LA']]
     ),
-   figures.total_cases_at_max_stringency_day_vs_delay_high_stringency_max_cases,
+  figures.total_cases_at_max_stringency_day_vs_delay_high_stringency_max_cases(),
+  dcc.Markdown('''
+    Placeholder paragraph text'''),
+   figures.histo_num_countries_vs_first_day_max_stringency(),
   ])
   return layout
 
