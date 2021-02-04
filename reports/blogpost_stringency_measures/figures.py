@@ -1,7 +1,9 @@
 # additional libraries
 import pandas as pd
 import plotly.graph_objs as go
+import plotly.express as px
 import geopandas as gpd
+import json
 import os
 
 import dash_core_components as dcc
@@ -9,15 +11,23 @@ import dash_core_components as dcc
 # The cwd is the root of the project. To access the data folder ./data
 #print (os.getcwd())
 
-# load data as a dataframe
-gdf = gpd.read_file('https://raw.githubusercontent.com/unicef/magicbox-reports/report/blogpost_stringency_measures/data/geodata_COVID-19_stringency_delay.geojson', driver='GeoJSON')
+
+geojson_file_path = "./data/geodata_COVID-19_stringency_delay.geojson"
+
+# GeoJSON data as a dataframe
+gdf = gpd.read_file(geojson_file_path, driver='GeoJSON')
+
+# Load GeoJSON as a JSON
+with open(geojson_file_path) as file:
+    geodata = json.load(file)
 
 # Num countries vs first day max stringency
 histo = pd.read_csv('./data/histo_num_countries_vs_first_day_max_stringency.csv')
+  
 
- # Scatter scatter plot
+# Scatter plot
 def total_cases_at_max_stringency_day_vs_delay_high_stringency_max_cases(): 
-  dcc.Graph(
+  return dcc.Graph(
         id='total_cases_at_max_stringency_day_vs_delay_high_stringency_max_cases',
         config= {'displaylogo': False},
         figure={
@@ -53,7 +63,6 @@ def histo_num_countries_vs_first_day_max_stringency():
   figure = go.Figure(
     data=[go.Bar(x=x, y=y, marker= {'color': colors})],
     layout=go.Layout(
-        title=go.layout.Title(text="First day of maximum stringency index"),
         xaxis={'title': 'First day of maximum stringency index'},
         yaxis={'title': 'Number of countries'},
         
@@ -64,3 +73,30 @@ def histo_num_countries_vs_first_day_max_stringency():
     config={'displaylogo': False},
     figure=figure
   )
+
+def first_day_max_stringency_map():
+  figure = px.choropleth_mapbox(gdf, geojson=geodata, 
+        locations='iso_a3', #  
+        featureidkey="properties.iso_a3",
+        color='first_day_max_stringency_numerical',                
+        color_continuous_scale="YlOrRd", #https://plotly.com/python/builtin-colorscales/
+        #range_color=(0, 12),
+        mapbox_style="carto-positron",
+        zoom=1, 
+        center = {"lat": 0.0, "lon": 0.0},
+        opacity=.8,
+        labels={'first_day_max_stringency':'First day maxinun stringency'}
+        )
+  figure.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+
+  return dcc.Graph(
+    id="first_day_max_stringency_map",
+    config={'displaylogo': False},
+    figure=figure
+  )
+  
+def total_cases_per_100k_at_first_day_max_stringency_map():
+  return None
+
+def delay_day_max_new_cases_per_100k_first_day_sim_max_stringency_map():
+  return None

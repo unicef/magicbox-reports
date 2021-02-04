@@ -21,7 +21,7 @@ def layout():
   layout = html.Div(
     className="doc container",
     children =[
-    html.H1(className="display-4", children=["When to implement lockdowns?"] ),
+    html.H1(className="display-4", children=["When to implement lockdowns"] ),
     dcc.Markdown('''
    
     The World Health Organization declared COVID-19 a pandemic on 11 March 2020. Since then, COVID has deeply 
@@ -52,8 +52,34 @@ def layout():
     ),
   figures.total_cases_at_max_stringency_day_vs_delay_high_stringency_max_cases(),
   dcc.Markdown('''
-    Placeholder paragraph text'''),
-   figures.histo_num_countries_vs_first_day_max_stringency(),
+    Placeholder paragraph text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus blandit sem odio, 
+    et efficitur augue fermentum id. Phasellus justo ligula, convallis vel sapien a, pulvinar 
+    posuere lacus. Vivamus dapibus, arcu quis consectetur mollis, arcu purus ultrices urna, et
+     finibus felis augue sed nisl. Cras feugiat erat lectus, facilisis vestibulum quam posuere quis.
+      Sed convallis tellus quis varius ultricies. Sed malesuada facilisis finibus. Fusce condimentum orci 
+      ut turpis porta eleifend. '''),
+  figures.histo_num_countries_vs_first_day_max_stringency(),
+  dcc.Markdown('''
+    Placeholder paragraph text, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus blandit sem odio, 
+    et efficitur augue fermentum id. Phasellus justo ligula, convallis vel sapien a, pulvinar posuere lacus. 
+    Vivamus dapibus, arcu quis consectetur mollis, arcu purus ultrices urna, et finibus felis augue sed nisl. 
+    Cras feugiat erat lectus, facilisis vestibulum quam posuere quis. Sed convallis tellus quis varius ultricies.
+     Sed malesuada facilisis finibus. Fusce condimentum orci ut turpis porta eleifend. '''),
+  figures.first_day_max_stringency_map(),
+  dcc.Markdown('''
+    Placeholder paragraph text, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus blandit sem odio, 
+    et efficitur augue fermentum id. Phasellus justo ligula, convallis vel sapien a, pulvinar posuere lacus. 
+    Vivamus dapibus, arcu quis consectetur mollis, arcu purus ultrices urna, et finibus felis augue sed nisl. 
+    Cras feugiat erat lectus, facilisis vestibulum quam posuere quis. Sed convallis tellus quis varius ultricies.
+     Sed malesuada facilisis finibus. Fusce condimentum orci ut turpis porta eleifend. '''),
+  figures.total_cases_per_100k_at_first_day_max_stringency_map(),
+  dcc.Markdown('''
+    Placeholder paragraph text, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus blandit sem odio, 
+    et efficitur augue fermentum id. Phasellus justo ligula, convallis vel sapien a, pulvinar posuere lacus. 
+    Vivamus dapibus, arcu quis consectetur mollis, arcu purus ultrices urna, et finibus felis augue sed nisl. 
+    Cras feugiat erat lectus, facilisis vestibulum quam posuere quis. Sed convallis tellus quis varius ultricies.
+     Sed malesuada facilisis finibus. Fusce condimentum orci ut turpis porta eleifend. '''),
+  figures.delay_day_max_new_cases_per_100k_first_day_sim_max_stringency_map()
   ])
   return layout
 
