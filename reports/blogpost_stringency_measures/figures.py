@@ -96,6 +96,25 @@ def first_day_max_stringency_map():
   )
   
 def total_cases_per_100k_at_first_day_max_stringency_map():
+  figure = px.choropleth_mapbox(gdf, geojson=geodata, 
+        locations='iso_a3', #  
+        featureidkey="properties.iso_a3",
+        color='total_cases_per_100k_at_first_day_max_stringency',                
+        color_continuous_scale="Reds", #https://plotly.com/python/builtin-colorscales/
+        #range_color=(0, 12),
+        mapbox_style="carto-positron",
+        zoom=1, 
+        center = {"lat": 0.0, "lon": 0.0},
+        opacity=.8,
+        labels={'total_cases_per_100k_at_first_day_max_stringency':"Cases per 100k"}
+        )
+  figure.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+  return dcc.Graph(
+    id="total_cases_per_100k_at_first_day_max_stringency_map",
+    config={'displaylogo': False},
+    figure=figure
+  )
+
   return None
 
 def delay_day_max_new_cases_per_100k_first_day_sim_max_stringency_map():
