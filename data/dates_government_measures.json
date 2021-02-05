@@ -1,0 +1,15 @@
+{"iso_a3":"MYS","country":"Malaysia","start_date":"2020-03-18T00:00:00.000Z","start_string":"lockdown","end_date":"2020-05-07T00:00:00.000Z","end_string":"measures\nloosened"}
+{"iso_a3":"IDN","country":"Indonesia","start_date":"2020-03-16T00:00:00.000Z","start_string":"physical\ndistancing\nenacted","end_date":"2020-05-07T00:00:00.000Z","end_string":"resumption\ndomestic\nflights"}
+{"iso_a3":"IND","country":"India","start_date":"2020-03-24T00:00:00.000Z","start_string":"lockdown","end_date":"2020-04-25T00:00:00.000Z","end_string":"shops\nreopening"}
+{"iso_a3":"MEX","country":"Mexico","start_date":"2020-03-14T00:00:00.000Z","start_string":"public\nhealth\nmeasures","end_date":"2020-05-18T00:00:00.000Z","end_string":"partial\nreopening"}
+{"iso_a3":"NGA","country":"Nigeria","start_date":"2020-03-30T00:00:00.000Z","start_string":"domestic\ntravel\nrestrictions","end_date":"2020-06-02T00:00:00.000Z","end_string":"partial\nreopening"}
+{"iso_a3":"COL","country":"Colombia","start_date":"2020-03-12T00:00:00.000Z","start_string":"health\nemergency\ndeclared","end_date":"2020-05-05T00:00:00.000Z","end_string":"partial\nreopening"}
+{"iso_a3":"CIV","country":"C\u00f4te d'Ivoire","start_date":"2020-03-24T00:00:00.000Z","start_string":"national\ncurfew","end_date":"2020-05-08T00:00:00.000Z","end_string":"total\nreopening"}
+{"iso_a3":"MMR","country":"Myanmar","start_date":"2020-03-13T00:00:00.000Z","start_string":"suspension of\npublic gatherings","end_date":null,"end_string":""}
+{"iso_a3":"MOZ","country":"Mozambique","start_date":"2020-03-23T00:00:00.000Z","start_string":"limit public\ngatherings","end_date":"2020-06-28T00:00:00.000Z","end_string":"international\nflights\nallowed"}
+{"iso_a3":"UKR","country":"Ukraine","start_date":"2020-03-15T00:00:00.000Z","start_string":"lockdown","end_date":"2020-05-22T00:00:00.000Z","end_string":"partial\nreopening"}
+{"iso_a3":"AUS","country":"Australia","start_date":"2020-03-29T00:00:00.000Z","start_string":"lockdown","end_date":"2020-05-22T00:00:00.000Z","end_string":"partial\nreopening"}
+{"iso_a3":"DEU","country":"Germany","start_date":"2020-03-16T00:00:00.000Z","start_string":"non-essential\npublic\nservices\nclosed","end_date":"2020-05-15T00:00:00.000Z","end_string":"internal\ntransport\nresumed"}
+{"iso_a3":"GBR","country":"United Kingdom","start_date":"2020-03-24T00:00:00.000Z","start_string":"lockdown","end_date":"2020-05-10T00:00:00.000Z","end_string":"go to\nwork\nallowed"}
+{"iso_a3":"ITA","country":"Italy","start_date":"2020-03-23T00:00:00.000Z","start_string":"lockdown","end_date":"2020-05-10T00:00:00.000Z","end_string":"businesses\nreopening"}
+{"iso_a3":"SGP","country":"Singapore","start_date":"2020-04-07T00:00:00.000Z","start_string":"limit public gatherings","end_date":"2020-06-19T00:00:00.000Z","end_string":"businesses reopening"}

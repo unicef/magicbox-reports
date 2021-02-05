@@ -7,3 +7,4 @@ bin/
 lib64
 pyvenv.cfg
 .vscode/settings.json
+data/COVID-19_stats_stringency_index.json
