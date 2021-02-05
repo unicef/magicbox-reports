@@ -9,7 +9,7 @@
       git clone repo.url/magicbox-reports
       cd magicbox-reports
       source venv/bin/activate # use the virtualenv
-      pip install
+      pip install -r requirements.txt 
     ```
     If using conda instead of venv:
     ```bash
