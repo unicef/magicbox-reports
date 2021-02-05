@@ -1,3 +1,5 @@
 {
-  "python.pythonPath": "/Users/merlos/opt/anaconda3/bin/python"
+  "python.pythonPath": "/home/andre/venv_magicbox_reports/bin/python",
+  "python.linting.pylintEnabled": true,
+  "python.linting.enabled": true
 }
