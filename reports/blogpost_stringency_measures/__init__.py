@@ -1,7 +1,7 @@
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
-
+from lib import unicef_html_components as uhtml
 from app import app
 
 # additional libraries
@@ -79,7 +79,17 @@ def layout():
     Vivamus dapibus, arcu quis consectetur mollis, arcu purus ultrices urna, et finibus felis augue sed nisl. 
     Cras feugiat erat lectus, facilisis vestibulum quam posuere quis. Sed convallis tellus quis varius ultricies.
      Sed malesuada facilisis finibus. Fusce condimentum orci ut turpis porta eleifend. '''),
-  figures.delay_day_max_new_cases_per_100k_first_day_sim_max_stringency_map()
+  figures.delay_day_max_new_cases_per_100k_first_day_sim_max_stringency_map(),
+  dcc.Markdown('''
+    Placeholder paragraph text, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus blandit sem odio, 
+    et efficitur augue fermentum id. Phasellus justo ligula, convallis vel sapien a, pulvinar posuere lacus. 
+    Vivamus dapibus, arcu quis consectetur mollis, arcu purus ultrices urna, et finibus felis augue sed nisl. 
+    Cras feugiat erat lectus, facilisis vestibulum quam posuere quis. Sed convallis tellus quis varius ultricies.
+     Sed malesuada facilisis finibus. Fusce condimentum orci ut turpis porta eleifend. '''),
+  uhtml.two_cols(
+    figures.stringency_vs_cases('IND'),
+    figures.stringency_vs_cases('SGP')
+  )
   ])
   return layout
 

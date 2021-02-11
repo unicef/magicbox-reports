@@ -2,6 +2,7 @@
 import pandas as pd
 import plotly.graph_objs as go
 import plotly.express as px
+from plotly.subplots import make_subplots
 import geopandas as gpd
 import json
 import os
@@ -139,4 +140,68 @@ def delay_day_max_new_cases_per_100k_first_day_sim_max_stringency_map():
     figure=figure
   )
 
-  
+stringency_df = pd.read_csv('/Users/merlos/devel/magicbox-reports/magicbox-reports/data/COVID-19_stats_stringency_index.csv')
+
+UNICEF_ORANGE = '#F26A21'
+UNICEF_DARK_BLUE = '#374EA2'
+UNICEF_RED="#E2231A"
+def stringency_vs_cases(iso_code='SGP'):
+
+    # Get stats only for the selected country
+   
+    filtered = stringency_df.loc[stringency_df['iso_code'] == iso_code]
+    country_name = filtered.iloc[0].location
+    print(country_name)
+    fig = make_subplots(specs=[[{"secondary_y": True}]])
+    #fig = go.Figure()
+    # Cases per 100k
+    fig.add_trace(
+        go.Scatter(    
+            x=filtered['date'], 
+            y=filtered['new_cases_per_100000'], 
+            mode='markers', 
+            name="Cases per 100k pop",
+            marker_color=UNICEF_RED,
+        )
+    )
+    # update marker
+    fig.update_traces(mode='markers', marker_line_width=0, marker_size=2)
+    fig.add_trace(
+        go.Scatter(
+            x=filtered['date'], 
+            y=filtered['new_cases_per_100000_7_day_average'], 
+            mode='lines', 
+            name="cases per 100k pop (7 day average)",
+            marker_color=UNICEF_RED
+        )
+    )
+    fig.add_trace(
+        go.Scatter(
+            x=filtered['date'], 
+            y=filtered['stringency_index'], 
+            mode='lines+markers',
+            name="Stringency index",
+            marker=dict(size=3, color=UNICEF_DARK_BLUE)
+        ),
+        secondary_y=True,
+    )
+    
+    # Set the position of the legend
+    fig.update_layout(
+       title=country_name, 
+      legend=dict( 
+        yanchor="top",
+        y=1.3, 
+        xanchor="left",
+        x=.3
+      )
+    )
+    
+    # Set y-axes titles
+    fig.update_yaxes(title_text="<b>New COVID-19 cases per 100k population</b>", color=UNICEF_RED, secondary_y=False)
+    fig.update_yaxes(title_text="<b>Stringency Index</b>", color=UNICEF_DARK_BLUE, secondary_y=True)
+    return dcc.Graph(
+      id=f"stringency_vs_cases_{iso_code}",
+      config={'displaylogo': False},
+      figure=fig
+    )  
