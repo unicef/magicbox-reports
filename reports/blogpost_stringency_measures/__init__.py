@@ -59,7 +59,10 @@ def layout():
      finibus felis augue sed nisl. Cras feugiat erat lectus, facilisis vestibulum quam posuere quis.
       Sed convallis tellus quis varius ultricies. Sed malesuada facilisis finibus. Fusce condimentum orci 
       ut turpis porta eleifend. '''),
-  figures.histo_num_countries_vs_first_day_max_stringency(),
+  udcc.graph(
+    fig=figures.histo_num_countries_vs_first_day_max_stringency(),
+    id="histo_countries_vs_stringency"
+  ),
   dcc.Markdown('''
     Placeholder paragraph text, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus blandit sem odio, 
     et efficitur augue fermentum id. Phasellus justo ligula, convallis vel sapien a, pulvinar posuere lacus. 
@@ -88,8 +91,8 @@ def layout():
     Cras feugiat erat lectus, facilisis vestibulum quam posuere quis. Sed convallis tellus quis varius ultricies.
      Sed malesuada facilisis finibus. Fusce condimentum orci ut turpis porta eleifend. '''),
   uhtml.two_cols(
-    figures.stringency_vs_cases('IND'),
-    figures.stringency_vs_cases('SGP')
+    udcc.graph(figures.stringency_vs_cases('IND'), id="str_v_cases_left"),
+    udcc.graph(figures.stringency_vs_cases('SGP'), id="str_vs_cases_right")
   ),
   dcc.Markdown('''
     Placeholder paragraph text, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus blandit sem odio, 

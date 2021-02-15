@@ -10,6 +10,11 @@ import os
 
 import dash_core_components as dcc
 
+UNICEF_ORANGE = '#F26A21'
+UNICEF_DARK_BLUE = '#374EA2'
+UNICEF_RED = '#E2231A'
+UNICEF_TEXT =  '#4A4A4A'
+
 # The cwd is the root of the project. To access the data folder ./data
 #print (os.getcwd())
 
@@ -59,22 +64,19 @@ def total_cases_at_max_stringency_day_vs_delay_high_stringency_max_cases():
     )
 
 def histo_num_countries_vs_first_day_max_stringency():
-  x = histo['start_date']
-  y = histo['num_countries']
-  colors = histo['color']
-  figure = go.Figure(
-    data=[go.Bar(x=x, y=y, marker= {'color': colors})],
-    layout=go.Layout(
+    x = histo['start_date']
+    y = histo['num_countries']
+    colors = histo['color']
+    fig = go.Figure()
+    fig.add_trace(
+        go.Bar(x=x, y=y, marker={'color': colors})
+    )
+    
+    fig.update_layout(
         xaxis={'title': 'First day of maximum stringency index'},
         yaxis={'title': 'Number of countries'},
-        
     )
-  )  
-  return dcc.Graph(
-    id="histo_num_countries_vs_fist_day_stringency",
-    config={'displaylogo': False},
-    figure=figure
-  )
+    return fig
 
 def first_day_max_stringency_map():
   figure = px.choropleth_mapbox(gdf, geojson=geodata, 
@@ -147,13 +149,10 @@ stringency_df = pd.read_csv('/Users/merlos/devel/magicbox-reports/magicbox-repor
 # Get the dataframe with the stringency index of the countries to plot 
 stringency_plt_df = stringency_df.loc[(stringency_df['country_to_plot'] == True)]
 
-UNICEF_ORANGE = '#F26A21'
-UNICEF_DARK_BLUE = '#374EA2'
-UNICEF_RED="#E2231A"
-def stringency_vs_cases(iso_code='SGP'):
 
+def stringency_vs_cases(iso_code='SGP'):
     # Get stats only for the selected country
-   
+
     filtered = stringency_df.loc[stringency_df['iso_code'] == iso_code]
     country_name = filtered.iloc[0].location
     print(country_name)
@@ -193,13 +192,22 @@ def stringency_vs_cases(iso_code='SGP'):
     
     # Set the position of the legend
     fig.update_layout(
-       title=country_name, 
+      title=dict(
+        text=f'<b>{country_name}</b>',
+        x=0.5,
+        font= dict(
+          size=20,
+          color=UNICEF_TEXT
+        )
+      ),
+      showlegend=False, 
       legend=dict( 
         yanchor="top",
         y=1.3, 
         xanchor="left",
         x=.3
-      )
+      ),
+      margin=dict(t=40, b=20, l=0, r=0)
     )
     
     # Set y-axes titles
@@ -210,12 +218,7 @@ def stringency_vs_cases(iso_code='SGP'):
     # tickformat you can change it (in the static plots was "%d.%m", but not crucial), 
     # ticks='outside' is to have small tick lines marking them below the x axis
     #fig.update_xaxes(dtick="M1", tickformat="%b\n%Y", ticks='outside')
-    
-    return dcc.Graph(
-      id=f"stringency_vs_cases_{iso_code}",
-      config={'displaylogo': False},
-      figure=fig
-    )  
+    return fig  
 
 # %%
 def heatmap_by_gdp(values_column, 
