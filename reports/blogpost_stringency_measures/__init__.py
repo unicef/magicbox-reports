@@ -2,6 +2,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 from lib import unicef_html_components as uhtml
+from lib import unicef_dash_core_components as udcc
 from app import app
 
 # additional libraries
@@ -89,7 +90,23 @@ def layout():
   uhtml.two_cols(
     figures.stringency_vs_cases('IND'),
     figures.stringency_vs_cases('SGP')
-  )
+  ),
+  dcc.Markdown('''
+    Placeholder paragraph text, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus blandit sem odio, 
+    et efficitur augue fermentum id. Phasellus justo ligula, convallis vel sapien a, pulvinar posuere lacus. 
+    Vivamus dapibus, arcu quis consectetur mollis, arcu purus ultrices urna, et finibus felis augue sed nisl. 
+    Cras feugiat erat lectus, facilisis vestibulum quam posuere quis. Sed convallis tellus quis varius ultricies.
+     Sed malesuada facilisis finibus. Fusce condimentum orci ut turpis porta eleifend. '''),
+  uhtml.two_cols(
+    udcc.graph(
+      figures.heatmap_by_gdp("stringency_index"),
+      id="new_cases_heatmap"
+    ),
+    udcc.graph(
+      figures.heatmap_by_gdp("new_cases_per_100000_7_day_average", colorscale="reds"),
+      id="stringency_heatmap"
+    )
+  )   
   ])
   return layout
 

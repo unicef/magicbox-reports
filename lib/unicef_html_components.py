@@ -1,8 +1,9 @@
 import dash_html_components as html
 
+
 def two_cols(col1, col2):
   """
-  displays two columns 50% each
+  Displays two columns 50% each (responsive)
   """
   return html.Div(
     className="row",
@@ -17,3 +18,6 @@ def two_cols(col1, col2):
     ]
   )
   
+def md(text):
+  return None
+
