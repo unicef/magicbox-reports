@@ -8,6 +8,6 @@ description = "description description 3"
 summary = "Summary Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis pulvinar tellus vel vulputate. Integer ac massa efficitur, sagittis turpis ullamcorper, vehicula velit. Donec placerat cursus leo eu ultrices. In porttitor varius nisl. In iaculis arcu non massa ullamcorper, ac blandit dolor pulvinar. Etiam tempus urna id sapien vulputate, a congue nunc condimentum. Proin pellen "
 
 # thumbnail displayed on the homepage
-thumb = ''
+thumb = 'lockdowns.png'
 # Alt
 thumb_alt = 'description for accessibility 3'
