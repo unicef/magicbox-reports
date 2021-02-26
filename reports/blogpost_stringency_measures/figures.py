@@ -144,7 +144,7 @@ def delay_day_max_new_cases_per_100k_first_day_sim_max_stringency_map():
   )
 
 # %%
-stringency_df = pd.read_csv('/Users/merlos/devel/magicbox-reports/magicbox-reports/data/COVID-19_stats_stringency_index.csv')
+stringency_df = pd.read_csv('./data/COVID-19_stats_stringency_index.csv')
 
 # Get the dataframe with the stringency index of the countries to plot 
 stringency_plt_df = stringency_df.loc[(stringency_df['country_to_plot'] == True)]
