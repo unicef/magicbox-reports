@@ -28,3 +28,8 @@ a.report-item:hover {
   width: 100%;
 
 }
+
+/* Adds some padding in the loader for the articles */
+#page-content[data-dash-is-loading="true"] {
+  margin-top: 100px;
+}

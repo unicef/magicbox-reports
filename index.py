@@ -14,6 +14,8 @@ import about
 from config import config
 #from reports import report2, report3
 
+#import time
+
 app.renderer = '''
 var renderer = new DashRenderer({
     request_pre: (payload) => {
@@ -31,7 +33,14 @@ var renderer = new DashRenderer({
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     html.Div(className="", id='page-header'),
-    html.Div(className="doc container mt-4", id='page-content')
+    html.Div(className="loader", id='loader', children=[
+       dcc.Loading(
+            id="loading-report",
+            type="default",
+            color="#1CABE2", # UNICEF blue
+            children=html.Div(id="page-content")
+        ),
+    ])
 ])
 
 #
@@ -53,6 +62,7 @@ def display_header(search):
 @app.callback(Output('page-content', 'children'),
               [Input('url', 'pathname')])
 def display_contents(pathname):
+    #time.sleep(1000)
     reportName = re.search('^/reports/([\w\-]*)',pathname) 
     print('display_contents: pathname:' + pathname)
     if pathname == '/':
